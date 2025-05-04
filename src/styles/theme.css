@@ -1,0 +1,149 @@
+/* Base transitions for theme changes */
+*, *::before, *::after {
+  transition: background-color 300ms ease-in-out, 
+              color 300ms ease-in-out, 
+              border-color 300ms ease-in-out, 
+              box-shadow 300ms ease-in-out;
+}
+
+/* Respect user's reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* Crimson Theme - Light Mode */
+:root[data-theme="crimson"][data-mode="light"] {
+  --color-primary: #E1003C;
+  --color-primary-contrast: #F5CAFC;
+  --color-secondary: #FF5A91;
+  --color-secondary-contrast: #F5CAFC;
+  --color-background: #F2E6FF;
+  --color-background-alt: #FFFFFF;
+  --color-text: #000B16;
+  --color-accent: #8B0067;
+  --color-accent-contrast: #F5CAFC;
+  --color-border: #D1C0E8;
+  
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 1px 2px var(--shadow-color);
+  --shadow-md: 0 2px 4px var(--shadow-color);
+  --shadow-lg: 0 4px 8px var(--shadow-color);
+}
+
+/* Crimson Theme - Dark Mode */
+:root[data-theme="crimson"][data-mode="dark"] {
+  --color-primary: #FF2D55;
+  --color-primary-contrast: #F5CAFC;
+  --color-secondary: #FF84C3;
+  --color-secondary-contrast: #000B16;
+  --color-background: #0B1A36;
+  --color-background-alt: #142747;
+  --color-text: #F5CAFC;
+  --color-accent: #581E64;
+  --color-accent-contrast: #F5CAFC;
+  --color-border: #2C3D5C;
+  
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 1px 2px var(--shadow-color);
+  --shadow-md: 0 2px 4px var(--shadow-color);
+  --shadow-lg: 0 4px 8px var(--shadow-color);
+}
+
+/* Field Theme - Light Mode */
+:root[data-theme="field"][data-mode="light"] {
+  --color-primary: #00C08D;
+  --color-primary-contrast: #FFFFFF;
+  --color-secondary: #00FFB4;
+  --color-secondary-contrast: #001A33;
+  --color-background: #FFFFFF;
+  --color-background-alt: #F7FCFF;
+  --color-text: #001A33;
+  --color-accent: #007B9E;
+  --color-accent-contrast: #FFFFFF;
+  --color-border: #E0F2F7;
+  
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 1px 2px var(--shadow-color);
+  --shadow-md: 0 2px 4px var(--shadow-color);
+  --shadow-lg: 0 4px 8px var(--shadow-color);
+}
+
+/* Field Theme - Dark Mode */
+:root[data-theme="field"][data-mode="dark"] {
+  --color-primary: #00E265;
+  --color-primary-contrast: #003760;
+  --color-secondary: #91FFFF;
+  --color-secondary-contrast: #003760;
+  --color-background: #003760;
+  --color-background-alt: #004A80;
+  --color-text: #CFFFFF;
+  --color-accent: #009EA0;
+  --color-accent-contrast: #CFFFFF;
+  --color-border: #00628F;
+  
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 1px 2px var(--shadow-color);
+  --shadow-md: 0 2px 4px var(--shadow-color);
+  --shadow-lg: 0 4px 8px var(--shadow-color);
+}
+
+/* Aura Theme - Light Mode */
+:root[data-theme="aura"][data-mode="light"] {
+  --color-primary: #C92A4B;
+  --color-primary-contrast: #FFF5FF;
+  --color-secondary: #FFB003;
+  --color-secondary-contrast: #3C004B;
+  --color-background: #FFF5FF;
+  --color-background-alt: #FFFFFF;
+  --color-text: #3C004B;
+  --color-accent: #FC8127;
+  --color-accent-contrast: #FFF5FF;
+  --color-border: #F0D8F5;
+  
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 1px 2px var(--shadow-color);
+  --shadow-md: 0 2px 4px var(--shadow-color);
+  --shadow-lg: 0 4px 8px var(--shadow-color);
+}
+
+/* Aura Theme - Dark Mode */
+:root[data-theme="aura"][data-mode="dark"] {
+  --color-primary: #A00153;
+  --color-primary-contrast: #FFE7FF;
+  --color-secondary: #FFD354;
+  --color-secondary-contrast: #000000;
+  --color-background: #000000;
+  --color-background-alt: #1A0026;
+  --color-text: #FFE7FF;
+  --color-accent: #700053;
+  --color-accent-contrast: #FFE7FF;
+  --color-border: #3D0035;
+  
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 1px 2px var(--shadow-color);
+  --shadow-md: 0 2px 4px var(--shadow-color);
+  --shadow-lg: 0 4px 8px var(--shadow-color);
+}
+
+/* Default to Crimson Light if no theme/mode attributes are set */
+:root:not([data-theme]):not([data-mode]) {
+  --color-primary: #E1003C;
+  --color-primary-contrast: #F5CAFC;
+  --color-secondary: #FF5A91;
+  --color-secondary-contrast: #F5CAFC;
+  --color-background: #F2E6FF;
+  --color-background-alt: #FFFFFF;
+  --color-text: #000B16;
+  --color-accent: #8B0067;
+  --color-accent-contrast: #F5CAFC;
+  --color-border: #D1C0E8;
+  
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 1px 2px var(--shadow-color);
+  --shadow-md: 0 2px 4px var(--shadow-color);
+  --shadow-lg: 0 4px 8px var(--shadow-color);
+}
